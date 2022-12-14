@@ -18,8 +18,7 @@ SELECT name, DOB__C
 FROM student__c
 WHERE CALENDAR_YEAR(DOB__c) > 2000
 
-SELECT name FROM lead
-WHERE CALENDAR_MONTH(systemmodstamp) = 12
+select name from lead where LastModifiedDate = THIS_MONTH
 
 SELECT name, (SELECT name FROM students__r WHERE name LIKE 'S%') 
 FROM class__c
