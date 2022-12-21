@@ -38,5 +38,5 @@ FROM STUDENT__C
 GROUP BY CALENDAR_MONTH(DOB__c)
 
 -------------------------------------------------------
-FIND {Mustansir} IN Name Fields RETURNING student__C (name), contact (name)
-FIND {Mustansir} IN Name Fields RETURNING student__C(name where sex__c = 'Male'  ), contact(name where sex__c = 'Male'  )
+FIND {Sudip} IN Name Fields RETURNING student__C (name), contact (name)
+FIND {Sudip} IN Name Fields RETURNING student__C(name where sex__c = 'Male'  ), contact(name where sex__c = 'Male'  )
