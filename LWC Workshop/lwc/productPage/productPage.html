@@ -1,0 +1,49 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <template if:true={show3}>
+        <div style="display: flex; justify-content:flex-end; align-items:center; margin-bottom: 10px;">
+            <div style="display: flex; align-items:baseline; margin-right:4px;">
+                <lightning-input type="search" placeholder="Search Product" onchange={handleKeyChange} value={searchKey}
+                label=" ">
+                </lightning-input>
+            </div>
+            <div style="display: flex; margin-top: 20px;">
+                <button class="slds-button slds-button_brand" onclick={addToCart}/>Add to cart</button>
+                <button class="slds-button slds-button_brand" onclick={goToCart}/>Go to cart</button>
+            </div>
+        </div>
+
+        <div style="height: 322px;">
+            <template if:true={productList}>
+                <lightning-datatable key-field="Order_Id__c" data={records} columns={columns}
+                sorted-by={sortBy} sorted-direction={sortDirection} show-row-number-column="true" onsort={doSorting}>
+                </lightning-datatable>
+            </template>
+        </div>
+
+        <div style="display: flex; justify-content:space-between; margin-top:10px;">
+            
+            <div>
+                <lightning-button disabled={bDisableFirst} style="margin-right:5px;" label="First" onclick={firstPage}></lightning-button>
+                <lightning-button disabled={bDisableFirst} label="Previous" onclick={previousPage}></lightning-button>
+            </div>
+
+            <div>
+                <lightning-button disabled={bDisableLast} label="Next" onclick={nextPage} style="margin-right: 5px;">
+                </lightning-button>
+                <lightning-button disabled={bDisableLast} label="Last" onclick={lastPage}>
+                </lightning-button>
+            </div>
+
+            
+
+        
+        </div>
+    </template>
+
+    <template if:true={show4}>
+        <c-cart-page></c-cart-page>
+    </template>
+
+</template>
