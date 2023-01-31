@@ -1,7 +1,7 @@
 public with sharing class OrderRecordController {
     @AuraEnabled(cacheable=true)
     public static List<AllOrders__c> getOrders() {
-        selector s = new selector();
+        GetOrder_Selector s = new GetOrder_Selector();
         return s.getOrdersSelector();
     }
 }
